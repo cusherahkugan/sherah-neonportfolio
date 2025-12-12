@@ -1,0 +1,97 @@
+---
+// Skills.astro
+const skillCategories = [
+  {
+    title: "Languages",
+    icon: "💻",
+    skills: ["Java", "Python", "C", "PHP", "HTML", "CSS", "JavaScript", "TypeScript"]
+  },
+  {
+    title: "Frontend / UI",
+    icon: "🎨",
+    skills: ["React.js", "Angular", "Next.js", "Tailwind CSS", "Material-UI", "Figma"]
+  },
+  {
+    title: "Backend / APIs",
+    icon: "⚙️",
+    skills: ["Node.js", "Express.js", "Nest.js", "Spring Boot", "REST", "GraphQL"]
+  },
+  {
+    title: "Databases / Cloud",
+    icon: "☁️",
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "AWS RDS", "Azure"]
+  },
+  {
+    title: "DevOps / Tools",
+    icon: "🛠️",
+    skills: ["Git", "GitHub", "Docker", "Kubernetes", "VS Code", "IntelliJ", "Postman", "JIRA", "Trello"]
+  },
+  {
+    title: "Special Interests",
+    icon: "🧠",
+    skills: ["Machine Learning", "Federated Learning Security", "Model Poisoning Defense"]
+  }
+];
+---
+
+<section id="skills" class="py-20 relative overflow-hidden bg-gradient-to-b from-black to-gray-900">
+  <div class="absolute inset-0 hex-pattern opacity-5"></div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center mb-12">
+      <h2 class="section-title">
+        <span class="neon-text">&lt;</span> TECH ARSENAL <span class="neon-text">/&gt;</span>
+      </h2>
+      <div class="section-subtitle">Weapons of choice in development warfare</div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {skillCategories.map((category, index) => (
+        <div 
+          class="glass-panel p-6 hover-lift skill-card"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">{category.icon}</span>
+            <h3 class="text-xl font-bold text-white">{category.title}</h3>
+          </div>
+          
+          <div class="flex flex-wrap gap-2">
+            {category.skills.map(skill => (
+              <span class="skill-chip">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Certifications -->
+    <div class="mt-16">
+      <div class="text-center mb-8">
+        <h3 class="text-3xl font-bold text-white mb-2">
+          <span class="neon-text">🏆</span> Certifications
+        </h3>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="glass-panel p-6 hover-lift flex items-start gap-4">
+          <div class="text-3xl">📜</div>
+          <div>
+            <h4 class="text-lg font-bold text-white mb-1">Object Oriented Programming in Java</h4>
+            <p class="text-gray-400 text-sm">Coursera</p>
+          </div>
+        </div>
+        
+        <div class="glass-panel p-6 hover-lift flex items-start gap-4">
+          <div class="text-3xl">📜</div>
+          <div>
+            <h4 class="text-lg font-bold text-white mb-1">Java Programming & Software Engineering</h4>
+            <p class="text-gray-400 text-sm">Coursera</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

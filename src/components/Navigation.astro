@@ -1,0 +1,68 @@
+---
+// Navigation.astro
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#home" class="text-2xl font-bold neon-text glitch" data-text="CK.DEV">
+          CK.DEV
+        </a>
+  
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-8">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+  
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-neon-green">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+  
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden mt-4 glass-panel rounded-lg p-4">
+        <ul class="space-y-3">
+          <li><a href="#home" class="block nav-link">Home</a></li>
+          <li><a href="#about" class="block nav-link">About</a></li>
+          <li><a href="#skills" class="block nav-link">Skills</a></li>
+          <li><a href="#experience" class="block nav-link">Experience</a></li>
+          <li><a href="#projects" class="block nav-link">Projects</a></li>
+          <li><a href="#education" class="block nav-link">Education</a></li>
+          <li><a href="#contact" class="block nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <script>
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu?.classList.toggle('hidden');
+    });
+  
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-menu')?.classList.add('hidden');
+      });
+    });
+  
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href') || '');
+        target?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>

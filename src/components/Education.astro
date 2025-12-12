@@ -1,0 +1,146 @@
+---
+// Education.astro
+---
+
+<section id="education" class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 circuit-bg opacity-5"></div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="text-center mb-12">
+        <h2 class="section-title">
+          <span class="neon-text">&lt;</span> EDUCATION <span class="neon-text">/&gt;</span>
+        </h2>
+        <div class="section-subtitle">Academic achievements & milestones</div>
+      </div>
+  
+      <div class="max-w-5xl mx-auto">
+        <!-- Main Education Card -->
+        <div class="glass-panel p-8 mb-8 hover-lift">
+          <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Left: University Info -->
+            <div class="flex-1">
+              <div class="flex items-start gap-4 mb-6">
+                <div class="text-5xl">🎓</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-2">B.Sc. (Hons) in Information Systems</h3>
+                  <p class="text-neon-green font-semibold mb-1">University of Colombo School of Computing (UCSC)</p>
+                  <p class="text-gray-400 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    2022 - Present
+                  </p>
+                </div>
+              </div>
+  
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-black/30 p-4 rounded-lg border border-neon-green/30">
+                  <div class="text-sm text-gray-400 mb-1">Current GPA</div>
+                  <div class="text-3xl font-bold neon-text">3.6</div>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border border-neon-green/30">
+                  <div class="text-sm text-gray-400 mb-1">Dean's List</div>
+                  <div class="text-lg font-bold text-neon-green">2x</div>
+                </div>
+              </div>
+  
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-neon-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <p class="text-gray-300">Dean's List: 2nd Year 1st Semester</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-neon-green flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <p class="text-gray-300">Dean's List: 3rd Year 1st Semester</p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Right: Achievements -->
+            <div class="flex-1">
+              <div class="mb-6">
+                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <span class="text-2xl">🏆</span>
+                  Hackathons & Competitions
+                </h4>
+                <div class="space-y-3">
+                  <div class="bg-gradient-to-r from-neon-green/10 to-transparent p-4 rounded-lg border-l-4 border-neon-green">
+                    <div class="font-bold text-white mb-1">Top 30 - FreshHack 3.0</div>
+                    <div class="text-sm text-gray-400">Competed among innovative teams nationwide</div>
+                  </div>
+                  <div class="bg-gradient-to-r from-neon-green/10 to-transparent p-4 rounded-lg border-l-4 border-neon-green">
+                    <div class="font-bold text-white mb-1">Top 10 - PyHack 2.0</div>
+                    <div class="text-sm text-gray-400">Excelled in Python-focused hackathon</div>
+                  </div>
+                </div>
+              </div>
+  
+              <div>
+                <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <span class="text-2xl">🎨</span>
+                  Design Contributions
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-2 bg-black/30 border border-neon-green/30 rounded-lg text-gray-300 text-sm">
+                    IEEE Design Team
+                  </span>
+                  <span class="px-3 py-2 bg-black/30 border border-neon-green/30 rounded-lg text-gray-300 text-sm">
+                    Astronomical Society
+                  </span>
+                  <span class="px-3 py-2 bg-black/30 border border-neon-green/30 rounded-lg text-gray-300 text-sm">
+                    Pahasara Media
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- References Section -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="glass-panel p-6 hover-lift">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-6 h-6 text-neon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+              <h4 class="text-lg font-bold text-white">Reference</h4>
+            </div>
+            <div>
+              <p class="font-bold text-white mb-1">Dr. Dinuni K. Fernando</p>
+              <p class="text-sm text-gray-400 mb-1">PhD (SUNY Binghamton, USA)</p>
+              <p class="text-sm text-gray-400 mb-2">Senior Lecturer, UCSC</p>
+              <a href="mailto:dkf@ucsc.cmb.ac.lk" class="text-neon-green hover:text-white text-sm flex items-center gap-1 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                dkf@ucsc.cmb.ac.lk
+              </a>
+            </div>
+          </div>
+  
+          <div class="glass-panel p-6 hover-lift">
+            <div class="flex items-center gap-3 mb-4">
+              <svg class="w-6 h-6 text-neon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+              <h4 class="text-lg font-bold text-white">Reference</h4>
+            </div>
+            <div>
+              <p class="font-bold text-white mb-1">Mr. R M U A Rathnayake</p>
+              <p class="text-sm text-gray-400 mb-2">Lecturer, UCSC</p>
+              <a href="mailto:uar@ucsc.cmb.ac.lk" class="text-neon-green hover:text-white text-sm flex items-center gap-1 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                uar@ucsc.cmb.ac.lk
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
