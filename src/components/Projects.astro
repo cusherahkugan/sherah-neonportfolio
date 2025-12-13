@@ -1,109 +1,295 @@
 ---
-// Projects.astro
 const projects = [
   {
     year: "2023",
     title: "FarmToKeells",
     description: "A web system connecting local farmers with Keells supermarkets, featuring inventory tracking, delivery scheduling, order management, and driver assignment.",
     tech: ["PHP", "MySQL", "HTML", "CSS"],
-    github: "https://github.com/cusherahkugan/FarmToKeells",
-    icon: "🌾"
+    github: "https://github.com/cusherahkugan",
+    category: "Full Stack"
   },
   {
     year: "2024",
     title: "Eventix",
     description: "Web-based event management platform for UCSC clubs supporting authentication, real-time updates, event calendar, and dashboards for participant management.",
     tech: ["React.js", "Tailwind CSS", "Spring Boot", "AWS RDS"],
-    github: "https://github.com/cusherahkugan/Eventix",
-    icon: "🎉"
+    github: "https://github.com/cusherahkugan",
+    category: "Full Stack"
   },
   {
     year: "2025",
     title: "PropertyLanka",
     description: "Developing a full-featured property listing platform by following the official Coursera Next.js specialization. Includes authentication, search, filtering, and dynamic routing.",
     tech: ["Next.js", "Tailwind CSS"],
-    github: "https://github.com/cusherahkugan/PropertyLanka",
-    icon: "🏠"
+    github: "https://github.com/cusherahkugan",
+    category: "Frontend"
   },
   {
     year: "2025",
     title: "Chirp",
     description: "Building a Laravel-based microblogging platform inspired by Twitter. Includes posts, likes, user profiles, and secure authentication.",
     tech: ["Laravel", "PHP", "MySQL"],
-    github: "https://github.com/cusherahkugan/Chirp",
-    icon: "🐦"
+    github: "https://github.com/cusherahkugan",
+    category: "Full Stack"
   },
   {
     year: "2025",
     title: "Tamper-Resilient Federated Learning",
     description: "Undergraduate research on defending Federated Learning systems against model poisoning attacks. Focuses on tamper-resilient aggregation mechanisms and evaluating robustness against adversarial clients.",
-    tech: ["Machine Learning Security", "Python"],
-    github: "https://github.com/cusherahkugan/FederatedLearningResearch",
-    icon: "🧬"
+    tech: ["Python", "Machine Learning", "Security"],
+    github: "https://github.com/cusherahkugan",
+    category: "Research"
   }
 ];
 ---
 
-<section id="projects" class="py-20 relative overflow-hidden bg-gradient-to-b from-gray-900 to-black">
-  <div class="absolute inset-0 grid-bg opacity-10"></div>
-  
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="text-center mb-12">
-      <h2 class="section-title">
-        <span class="neon-text">&lt;</span> PROJECTS <span class="neon-text">/&gt;</span>
-      </h2>
-      <div class="section-subtitle">Building the future, one project at a time</div>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<section id="projects" class="projects-section">
+  <div class="projects-container">
+    <h2 class="section-title fade-in">PROJECTS</h2>
+    
+    <div class="projects-grid">
       {projects.map((project, index) => (
-        <div 
-          class="project-card glass-panel p-6 hover-lift group"
-          style={`animation-delay: ${index * 0.1}s`}
-        >
-          <div class="flex items-start justify-between mb-4">
-            <div class="text-5xl">{project.icon}</div>
-            <span class="px-3 py-1 bg-neon-green/10 border border-neon-green/30 rounded-full text-neon-green text-xs font-mono">
-              {project.year}
-            </span>
+        <div class="project-card glass-card fade-in" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="project-header">
+            <div class="project-year">{project.year}</div>
+            <div class="project-category">{project.category}</div>
           </div>
-
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-neon-green transition-colors">
-            {project.title}
-          </h3>
-
-          <p class="text-gray-400 text-sm mb-4 line-clamp-3">
-            {project.description}
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            {project.tech.map(tech => (
-              <span class="skill-chip-small">{tech}</span>
-            ))}
-          </div>
-
-          <a 
-            href={project.github} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="flex items-center gap-2 text-neon-green hover:text-white transition-colors group"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          
+          <h3 class="project-title">
+            <svg class="github-icon" viewBox="0 0 24 24" fill="var(--tron-green)">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
-            <span class="text-sm font-medium">View Code</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
+            {project.title}
+          </h3>
+          
+          <p class="project-description">{project.description}</p>
+          
+          <div class="project-tech">
+            {project.tech.map(tech => (
+              <span class="tech-badge">{tech}</span>
+            ))}
+          </div>
+          
+          <div class="project-footer">
+            <a href={project.github} target="_blank" class="project-link" aria-label={`View ${project.title} on GitHub`}>
+              <span>View on GitHub</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="project-glow"></div>
         </div>
       ))}
     </div>
-
-    <div class="text-center mt-12">
-      <a href="https://github.com/cusherahkugan" target="_blank" class="cyber-btn cyber-btn-secondary inline-block">
-        <span>VIEW ALL ON GITHUB</span>
-      </a>
-    </div>
   </div>
 </section>
+
+<style>
+  .projects-section {
+    background: var(--tron-black);
+  }
+
+  .projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--tron-green);
+    box-shadow: 0 0 50px rgba(0, 255, 65, 0.4);
+  }
+
+  .project-card:hover .project-glow {
+    opacity: 1;
+  }
+
+  .project-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .project-year {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: var(--tron-green);
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--tron-green);
+    border-radius: 15px;
+    background: rgba(0, 255, 65, 0.05);
+  }
+
+  .project-category {
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 700;
+  }
+
+  .github-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .project-description {
+    color: #d0d0d0;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-badge {
+    padding: 0.4rem 0.9rem;
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: var(--tron-green);
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+  }
+
+  .tech-badge:hover {
+    background: var(--tron-green);
+    color: var(--tron-black);
+    transform: translateY(-2px);
+  }
+
+  .project-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--tron-green);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+  }
+
+  .project-link svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .project-link:hover {
+    gap: 1rem;
+  }
+
+  .project-link:hover svg {
+    transform: translate(3px, -3px);
+  }
+
+  /* Animated border effect */
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(45deg, var(--tron-green), transparent, var(--tron-green));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .project-card:hover::before {
+    opacity: 0.5;
+    animation: rotate-border 3s linear infinite;
+  }
+
+  @keyframes rotate-border {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  @media (max-width: 968px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-card {
+      padding: 1.5rem;
+    }
+  }
+</style>

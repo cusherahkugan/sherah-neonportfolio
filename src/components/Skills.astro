@@ -1,97 +1,458 @@
 ---
-// Skills.astro
-const skillCategories = [
-  {
-    title: "Languages",
-    icon: "💻",
-    skills: ["Java", "Python", "C", "PHP", "HTML", "CSS", "JavaScript", "TypeScript"]
-  },
-  {
-    title: "Frontend / UI",
-    icon: "🎨",
-    skills: ["React.js", "Angular", "Next.js", "Tailwind CSS", "Material-UI", "Figma"]
-  },
-  {
-    title: "Backend / APIs",
-    icon: "⚙️",
-    skills: ["Node.js", "Express.js", "Nest.js", "Spring Boot", "REST", "GraphQL"]
-  },
-  {
-    title: "Databases / Cloud",
-    icon: "☁️",
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "AWS RDS", "Azure"]
-  },
-  {
-    title: "DevOps / Tools",
-    icon: "🛠️",
-    skills: ["Git", "GitHub", "Docker", "Kubernetes", "VS Code", "IntelliJ", "Postman", "JIRA", "Trello"]
-  },
-  {
-    title: "Special Interests",
-    icon: "🧠",
-    skills: ["Machine Learning", "Federated Learning Security", "Model Poisoning Defense"]
-  }
-];
 ---
 
-<section id="skills" class="py-20 relative overflow-hidden bg-gradient-to-b from-black to-gray-900">
-  <div class="absolute inset-0 hex-pattern opacity-5"></div>
-  
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="text-center mb-12">
-      <h2 class="section-title">
-        <span class="neon-text">&lt;</span> TECH ARSENAL <span class="neon-text">/&gt;</span>
-      </h2>
-      <div class="section-subtitle">Weapons of choice in development warfare</div>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {skillCategories.map((category, index) => (
-        <div 
-          class="glass-panel p-6 hover-lift skill-card"
-          style={`animation-delay: ${index * 0.1}s`}
-        >
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-4xl">{category.icon}</span>
-            <h3 class="text-xl font-bold text-white">{category.title}</h3>
+<section id="skills" class="skills-section">
+  <div class="skills-container">
+    <h2 class="section-title fade-in">TECHNICAL ARSENAL</h2>
+    
+    <div class="skills-grid">
+      <div class="skill-category fade-in glass-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
           </div>
-          
-          <div class="flex flex-wrap gap-2">
-            {category.skills.map(skill => (
-              <span class="skill-chip">
-                {skill}
-              </span>
-            ))}
+          <h3 class="category-title">Languages</h3>
+        </div>
+        <div class="skills-items">
+          <div class="skill-item" data-level="90">
+            <span class="skill-name">Java</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">TypeScript</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="80">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="75">
+            <span class="skill-name">PHP</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="70">
+            <span class="skill-name">C</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 70%"></div>
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-
-    <!-- Certifications -->
-    <div class="mt-16">
-      <div class="text-center mb-8">
-        <h3 class="text-3xl font-bold text-white mb-2">
-          <span class="neon-text">🏆</span> Certifications
-        </h3>
       </div>
-      
-      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        <div class="glass-panel p-6 hover-lift flex items-start gap-4">
-          <div class="text-3xl">📜</div>
-          <div>
-            <h4 class="text-lg font-bold text-white mb-1">Object Oriented Programming in Java</h4>
-            <p class="text-gray-400 text-sm">Coursera</p>
+
+      <div class="skill-category fade-in glass-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="category-title">Frontend / UI</h3>
+        </div>
+        <div class="skills-items">
+          <div class="skill-item" data-level="90">
+            <span class="skill-name">React.js</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">Angular</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">Next.js</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="90">
+            <span class="skill-name">Tailwind CSS</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="80">
+            <span class="skill-name">Material-UI</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">Figma</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
           </div>
         </div>
-        
-        <div class="glass-panel p-6 hover-lift flex items-start gap-4">
-          <div class="text-3xl">📜</div>
-          <div>
-            <h4 class="text-lg font-bold text-white mb-1">Java Programming & Software Engineering</h4>
-            <p class="text-gray-400 text-sm">Coursera</p>
+      </div>
+
+      <div class="skill-category fade-in glass-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+          </div>
+          <h3 class="category-title">Backend / APIs</h3>
+        </div>
+        <div class="skills-items">
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">Node.js</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">Express.js</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="80">
+            <span class="skill-name">Nest.js</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">Spring Boot</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="90">
+            <span class="skill-name">REST APIs</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="75">
+            <span class="skill-name">GraphQL</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in glass-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
+              <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+              <line x1="16" y1="8" x2="2" y2="22"></line>
+              <line x1="17.5" y1="15" x2="9" y2="15"></line>
+            </svg>
+          </div>
+          <h3 class="category-title">DevOps / Tools</h3>
+        </div>
+        <div class="skills-items">
+          <div class="skill-item" data-level="90">
+            <span class="skill-name">Git & GitHub</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="80">
+            <span class="skill-name">Docker</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="75">
+            <span class="skill-name">Kubernetes</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">VS Code</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">Postman</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="80">
+            <span class="skill-name">JIRA</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in glass-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+            </svg>
+          </div>
+          <h3 class="category-title">Databases / Cloud</h3>
+        </div>
+        <div class="skills-items">
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">MySQL</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="80">
+            <span class="skill-name">PostgreSQL</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">MongoDB</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="75">
+            <span class="skill-name">AWS RDS</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="75">
+            <span class="skill-name">Azure</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in glass-card">
+        <div class="category-header">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 1v6m0 6v6"></path>
+              <path d="m4.2 4.2 4.3 4.3m5 5 4.3 4.3M1 12h6m6 0h6M4.2 19.8l4.3-4.3m5-5 4.3-4.3"></path>
+            </svg>
+          </div>
+          <h3 class="category-title">Special Interests</h3>
+        </div>
+        <div class="skills-items">
+          <div class="skill-item" data-level="80">
+            <span class="skill-name">Machine Learning</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="75">
+            <span class="skill-name">Federated Learning</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+          <div class="skill-item" data-level="75">
+            <span class="skill-name">Security Research</span>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Animate skill bars on scroll
+  const skillBars = document.querySelectorAll('.skill-progress');
+  
+  const animateSkills = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target as HTMLElement;
+        const width = bar.style.width;
+        bar.style.width = '0%';
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 100);
+      }
+    });
+  };
+  
+  const skillObserver = new IntersectionObserver(animateSkills, {
+    threshold: 0.5
+  });
+  
+  skillBars.forEach(bar => skillObserver.observe(bar));
+</script>
+
+<style>
+  .skills-section {
+    background: var(--tron-black);
+  }
+
+  .skills-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-category {
+    padding: 2rem;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--glass-border);
+  }
+
+  .category-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--tron-green);
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .category-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+    color: var(--tron-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .skills-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .skill-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.5), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--tron-green-dark), var(--tron-green));
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--tron-green);
+    transition: width 1.5s ease-out;
+    position: relative;
+  }
+
+  .skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    filter: blur(5px);
+  }
+
+  @media (max-width: 968px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      padding: 1.5rem;
+    }
+
+    .category-title {
+      font-size: 1.2rem;
+    }
+  }
+</style>
