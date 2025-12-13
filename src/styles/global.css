@@ -14,15 +14,15 @@
 }
 
 :root {
-  --tron-green: #48bfe3;
-  --tron-green-dim: #00cc33;
-  --tron-green-dark: #008822;
-  --tron-black: #0a0e27;
+  --tron-green: #b2ff26;
+  --tron-green-dim: #474748;
+  --tron-green-dark: #474748;
+  --tron-black: #000000;
   --tron-dark: #0f1419;
   --tron-grey: #1a1f2e;
-  --tron-light-grey: #2a3142;
+  --tron-light-grey: #945888;
   --glass-bg: rgba(26, 31, 46, 0.7);
-  --glass-border: rgba(0, 255, 65, 0.2);
+  --glass-border: rgba(190, 110, 185, 0.2);
 }
 
 body {
@@ -122,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .glass-card:hover {
   border-color: var(--tron-green);
-  box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  box-shadow: 0 0 30px rgba(236, 172, 235, 0.3);
   transform: translateY(-5px);
 }
 
