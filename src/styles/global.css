@@ -1,270 +1,154 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Then keep your custom styles below */
+@layer base {
+  * {
+    @apply border border-white/10;
+  }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+  body {
+    @apply bg-black text-white antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-:root {
-  --tron-green: #b2ff26;
-  --tron-green-dim: #474748;
-  --tron-green-dark: #474748;
-  --tron-black: #000000;
-  --tron-dark: #0f1419;
-  --tron-grey: #1a1f2e;
-  --tron-light-grey: #945888;
-  --glass-bg: rgba(26, 31, 46, 0.7);
-  --glass-border: rgba(190, 110, 185, 0.2);
+
+@layer components {
+  /* Glassmorphism Cards */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-hover {
+    @apply transition-all duration-300 hover:bg-white/10 hover:border-white/20;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-red via-neon-pink to-neon-blue;
+  }
+
+  .gradient-text-alt {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink;
+  }
+
+  /* Neon Glow Effects */
+  .neon-glow-red {
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.5),
+                0 0 40px rgba(255, 0, 85, 0.3),
+                0 0 60px rgba(255, 0, 85, 0.1);
+  }
+
+  .neon-glow-blue {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5),
+                0 0 40px rgba(0, 240, 255, 0.3),
+                0 0 60px rgba(0, 240, 255, 0.1);
+  }
+
+  /* Grid Background */
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(255, 0, 85, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Animated Gradient Border */
+  .animated-border {
+    position: relative;
+    background: linear-gradient(90deg, #FF0055, #00F0FF, #FF006E, #8338EC);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+    padding: 2px;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: black;
+    z-index: -1;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #FF0055, #00F0FF);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #FF006E, #8338EC);
+  }
+
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-20;
+  }
+
+  /* Hover Card Effect */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
 }
 
-body {
-  font-family: 'Rajdhani', sans-serif;
-  background: var(--tron-black);
-  color: #ffffff;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-/* Animated Grid Background */
-.grid-background {
+/* Particle Background */
+.particles {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   z-index: -1;
-  background: 
-    linear-gradient(var(--tron-black) 1px, transparent 1px),
-    linear-gradient(90deg, var(--tron-black) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: 0 0, 0 0;
-  animation: gridMove 20s linear infinite;
 }
 
-.grid-background::before {
-  content: '';
+.particle {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, transparent 0%, var(--tron-black) 100%);
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float-particle 20s infinite;
 }
 
-@keyframes gridMove {
+@keyframes float-particle {
   0% {
-    background-position: 0 0, 0 0;
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
   }
   100% {
-    background-position: 50px 50px, 50px 50px;
-  }
-}
-
-/* Glowing Lines */
-.glow-line {
-  position: absolute;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--tron-green), transparent);
-  animation: glow-pulse 3s ease-in-out infinite;
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
-    opacity: 0.3;
-    box-shadow: 0 0 5px var(--tron-green);
-  }
-  50% {
-    opacity: 1;
-    box-shadow: 0 0 20px var(--tron-green), 0 0 40px var(--tron-green);
-  }
-}
-
-/* Glassmorphism Card */
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
-  transition: left 0.5s ease;
-}
-
-.glass-card:hover::before {
-  left: 100%;
-}
-
-.glass-card:hover {
-  border-color: var(--tron-green);
-  box-shadow: 0 0 30px rgba(236, 172, 235, 0.3);
-  transform: translateY(-5px);
-}
-
-/* Neon Button */
-.neon-button {
-  font-family: 'Orbitron', sans-serif;
-  padding: 12px 30px;
-  background: transparent;
-  border: 2px solid var(--tron-green);
-  color: var(--tron-green);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.neon-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--tron-green);
-  transition: left 0.3s ease;
-  z-index: -1;
-}
-
-.neon-button:hover::before {
-  left: 0;
-}
-
-.neon-button:hover {
-  color: var(--tron-black);
-  box-shadow: 0 0 20px var(--tron-green), inset 0 0 20px rgba(0, 255, 65, 0.3);
-}
-
-/* Section Styles */
-section {
-  min-height: 100vh;
-  padding: 100px 5%;
-  position: relative;
-}
-
-.section-title {
-  font-size: 3rem;
-  color: var(--tron-green);
-  text-align: center;
-  margin-bottom: 4rem;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: var(--tron-green);
-  box-shadow: 0 0 10px var(--tron-green);
-  animation: pulse-width 2s ease-in-out infinite;
-}
-
-@keyframes pulse-width {
-  0%, 100% {
-    width: 100px;
-  }
-  50% {
-    width: 150px;
-  }
-}
-
-/* Skill Tags */
-.skill-tag {
-  display: inline-block;
-  padding: 8px 16px;
-  margin: 5px;
-  background: rgba(0, 255, 65, 0.1);
-  border: 1px solid var(--tron-green);
-  border-radius: 20px;
-  font-size: 0.9rem;
-  color: var(--tron-green);
-  transition: all 0.3s ease;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.skill-tag:hover {
-  background: var(--tron-green);
-  color: var(--tron-black);
-  box-shadow: 0 0 15px var(--tron-green);
-  transform: translateY(-3px);
-}
-
-/* Fade In Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--tron-dark);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--tron-green);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--tron-green-dim);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  section {
-    padding: 80px 5%;
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
   }
 }

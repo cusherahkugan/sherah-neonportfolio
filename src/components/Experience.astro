@@ -1,385 +1,228 @@
 ---
+import { Briefcase, Trophy, Users, Calendar } from 'lucide-react';
+
+const experience = {
+  company: 'Kingslake',
+  role: 'Software Engineer Intern',
+  period: 'Nov 2024 – Apr 2025',
+  location: 'Colombo, Sri Lanka',
+  projects: [
+    {
+      name: 'Kingslake TMS',
+      achievements: [
+        'Developed reusable Angular components and integrated REST APIs',
+        'Fixed frontend bugs across TMS modules, improving stability and performance',
+        'Improved UI/UX and mobile responsiveness',
+        'Integrated Google Maps API for location handling',
+      ]
+    },
+    {
+      name: 'Kingslake HRMS',
+      achievements: [
+        'Developed new features using reusable Angular components to enhance system functionality',
+        'Resolved file upload issues with AWS S3',
+        'Integrated backend REST APIs and tested with Postman',
+        'Implemented export functionality for reporting',
+      ]
+    }
+  ]
+};
+
+const hackathons = [
+  {
+    year: '2023',
+    title: 'PyHack 2.0',
+    organization: 'IEEE Student Branch of IIT',
+    achievement: 'Top 10 Teams',
+    color: 'neon-blue'
+  },
+  {
+    year: '2022',
+    title: 'FreshHack 3.0 Hackathon',
+    organization: 'ISACA Student Group of UCSC',
+    achievement: 'Top 10 Teams',
+    color: 'neon-red'
+  },
+  {
+    year: '2022',
+    title: 'SLIIT Designathon',
+    organization: 'SLIIT',
+    achievement: 'Participant',
+    color: 'neon-pink'
+  },
+];
+
+const activities = [
+  {
+    period: '2022–2024',
+    role: 'Design Team Member',
+    organization: 'Astronomical Society, University of Colombo',
+    icon: '🌟'
+  },
+  {
+    period: '2022–2024',
+    role: 'Design Team Member',
+    organization: 'Pahasara Media',
+    icon: '🎨'
+  },
+  {
+    period: '2022–2023',
+    role: 'Design Team Member',
+    organization: 'IEEE Student Branch, UCSC',
+    icon: '⚡'
+  },
+  {
+    period: '2022–2023',
+    role: 'Outgoing Global Talent (oGT) Member',
+    organization: 'AIESEC, University of Colombo',
+    icon: '🌍'
+  },
+  {
+    period: '2022–2023',
+    role: 'Member',
+    organization: 'Rotaract Club of UCSC',
+    icon: '🤝'
+  },
+  {
+    period: '2022–2023',
+    role: 'Member',
+    organization: 'Gavel Club, University of Colombo',
+    icon: '🎤'
+  },
+];
 ---
 
-<section id="experience" class="experience-section">
-  <div class="experience-container">
-    <h2 class="section-title fade-in">EXPERIENCE</h2>
+<section id="experience" class="section-container">
+  <div class="max-w-7xl mx-auto">
     
-    <div class="timeline">
-      <div class="timeline-line"></div>
-      
-      <div class="experience-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="experience-card glass-card">
-          <div class="experience-header">
-            <div class="experience-title-wrapper">
-              <h3 class="experience-title">Software Engineer Intern</h3>
-              <div class="company-badge">
-                <span class="company-name">@ Kingslake</span>
-              </div>
-            </div>
-            <div class="experience-date">
-              <svg class="date-icon" viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-              <span>Nov 2024 - Apr 2025</span>
-            </div>
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-fade-in">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Experience & <span class="gradient-text">Activities</span>
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-neon-red to-neon-blue mx-auto"></div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="mb-16 animate-slide-up">
+      <div class="flex items-center gap-3 mb-8">
+        <Briefcase className="w-8 h-8 text-neon-blue" />
+        <h3 class="text-2xl font-bold">Professional Experience</h3>
+      </div>
+
+      <div class="glass rounded-2xl p-8 hover-lift border-l-4 border-neon-blue">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
+          <div>
+            <h4 class="text-2xl font-bold gradient-text-alt mb-2">{experience.role}</h4>
+            <p class="text-xl text-gray-300">{experience.company}</p>
+            <p class="text-gray-400 text-sm">{experience.location}</p>
           </div>
-          
-          <div class="experience-description">
-            <div class="responsibility-item">
-              <div class="icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
-              <p>Developed reusable Angular components for enterprise applications, improving code maintainability and development efficiency.</p>
-            </div>
-            
-            <div class="responsibility-item">
-              <div class="icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
-                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                </svg>
-              </div>
-              <p>Integrated REST APIs and optimized data handling processes, resulting in enhanced application performance.</p>
-            </div>
-            
-            <div class="responsibility-item">
-              <div class="icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path d="M12 1v6m0 6v6"></path>
-                  <path d="m4.2 4.2 4.3 4.3m5 5 4.3 4.3M1 12h6m6 0h6M4.2 19.8l4.3-4.3m5-5 4.3-4.3"></path>
-                </svg>
-              </div>
-              <p>Improved UI performance and maintainability through modular component design and best practices implementation.</p>
-            </div>
-            
-            <div class="responsibility-item">
-              <div class="icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-              </div>
-              <p>Contributed to Agile sprints with feature development and bug resolution, ensuring timely delivery of quality software.</p>
-            </div>
-          </div>
-          
-          <div class="tech-stack">
-            <span class="tech-label">Tech Stack:</span>
-            <div class="tech-tags">
-              <span class="tech-tag">Angular</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">REST APIs</span>
-              <span class="tech-tag">Agile</span>
-            </div>
+          <div class="flex items-center gap-2 px-4 py-2 bg-neon-blue/20 border border-neon-blue/30 rounded-full">
+            <Calendar className="w-4 h-4 text-neon-blue" />
+            <span class="text-sm font-semibold">{experience.period}</span>
           </div>
         </div>
-      </div>
-      
-      <!-- Achievement Highlights -->
-      <div class="achievements-section fade-in">
-        <h3 class="achievements-title">
-          <svg class="trophy-icon" viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
-            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-            <path d="M4 22h16"></path>
-            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-          </svg>
-          ACHIEVEMENTS & HIGHLIGHTS
-        </h3>
-        
-        <div class="achievements-grid">
-          <div class="achievement-card glass-card">
-            <div class="achievement-icon">🏆</div>
-            <div class="achievement-title">Top 30</div>
-            <div class="achievement-subtitle">FreshHack 3.0</div>
-          </div>
-          
-          <div class="achievement-card glass-card">
-            <div class="achievement-icon">🥇</div>
-            <div class="achievement-title">Top 10</div>
-            <div class="achievement-subtitle">PyHack 2.0</div>
-          </div>
-          
-          <div class="achievement-card glass-card">
-            <div class="achievement-icon">🎓</div>
-            <div class="achievement-title">Dean's List</div>
-            <div class="achievement-subtitle">2nd & 3rd Year</div>
-          </div>
-          
-          <div class="achievement-card glass-card">
-            <div class="achievement-icon">🎨</div>
-            <div class="achievement-title">Design Team</div>
-            <div class="achievement-subtitle">IEEE, Astronomical Society</div>
+
+        <!-- Projects -->
+        <div class="space-y-6">
+          {experience.projects.map((project, index) => (
+            <div class="border-l-2 border-white/20 pl-6 hover:border-neon-blue transition-colors">
+              <h5 class="text-lg font-semibold mb-3 text-neon-blue">{project.name}</h5>
+              <ul class="space-y-2">
+                {project.achievements.map((achievement) => (
+                  <li class="flex items-start gap-3 text-gray-300">
+                    <span class="text-neon-red mt-1.5">▹</span>
+                    <span class="flex-1">{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="mt-6 pt-6 border-t border-white/10">
+          <p class="text-sm text-gray-400 mb-3">Technologies Used:</p>
+          <div class="flex flex-wrap gap-2">
+            {['Angular', 'TypeScript', 'REST APIs', 'AWS S3', 'Google Maps API', 'Postman'].map((tech) => (
+              <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs hover:bg-white/10 transition-colors">
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Hackathons & Competitions -->
+    <div class="mb-16 animate-slide-up" style="animation-delay: 0.2s;">
+      <div class="flex items-center gap-3 mb-8">
+        <Trophy className="w-8 h-8 text-neon-red" />
+        <h3 class="text-2xl font-bold">Hackathons & Competitions</h3>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {hackathons.map((hackathon, index) => (
+          <div 
+            class="glass rounded-xl p-6 hover-lift group relative overflow-hidden"
+            style={`animation-delay: ${index * 0.1}s;`}
+          >
+            <!-- Background Glow -->
+            <div class={`absolute inset-0 bg-gradient-to-br from-${hackathon.color}/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+            
+            <div class="relative z-10">
+              <!-- Year Badge -->
+              <div class={`inline-block px-3 py-1 bg-${hackathon.color}/20 border border-${hackathon.color}/30 rounded-full text-sm font-semibold mb-4`}>
+                {hackathon.year}
+              </div>
+
+              <h4 class="text-lg font-bold mb-2 group-hover:text-white transition-colors">
+                {hackathon.title}
+              </h4>
+              <p class="text-sm text-gray-400 mb-3">{hackathon.organization}</p>
+              
+              <div class={`flex items-center gap-2 text-${hackathon.color} font-semibold`}>
+                <Trophy className="w-4 h-4" />
+                <span class="text-sm">{hackathon.achievement}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Clubs & Activities -->
+    <div class="animate-slide-up" style="animation-delay: 0.3s;">
+      <div class="flex items-center gap-3 mb-8">
+        <Users className="w-8 h-8 text-neon-pink" />
+        <h3 class="text-2xl font-bold">Clubs & Activities</h3>
+      </div>
+
+      <div class="glass rounded-2xl p-8">
+        <div class="grid md:grid-cols-2 gap-6">
+          {activities.map((activity, index) => (
+            <div 
+              class="flex items-start gap-4 p-4 rounded-lg hover:bg-white/5 transition-all group cursor-pointer"
+              style={`animation-delay: ${index * 0.05}s;`}
+            >
+              <div class="text-3xl group-hover:scale-110 transition-transform">
+                {activity.icon}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-start justify-between gap-2 mb-1">
+                  <h5 class="font-semibold group-hover:text-neon-blue transition-colors">
+                    {activity.role}
+                  </h5>
+                  <span class="text-xs text-gray-500 whitespace-nowrap">{activity.period}</span>
+                </div>
+                <p class="text-sm text-gray-400">{activity.organization}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
-
-<style>
-  .experience-section {
-    background: linear-gradient(135deg, var(--tron-black) 0%, var(--tron-dark) 100%);
-  }
-
-  .experience-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .timeline {
-    position: relative;
-    padding: 2rem 0;
-  }
-
-  .timeline-line {
-    position: absolute;
-    left: 30px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, var(--tron-green), transparent);
-    box-shadow: 0 0 10px var(--tron-green);
-  }
-
-  .experience-item {
-    position: relative;
-    padding-left: 80px;
-    margin-bottom: 3rem;
-  }
-
-  .timeline-dot {
-    position: absolute;
-    left: 21px;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    background: var(--tron-green);
-    border: 3px solid var(--tron-black);
-    border-radius: 50%;
-    box-shadow: 0 0 20px var(--tron-green);
-    animation: pulse-dot 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse-dot {
-    0%, 100% {
-      box-shadow: 0 0 20px var(--tron-green);
-    }
-    50% {
-      box-shadow: 0 0 40px var(--tron-green), 0 0 60px var(--tron-green);
-    }
-  }
-
-  .experience-card {
-    padding: 2rem;
-  }
-
-  .experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .experience-title-wrapper {
-    flex: 1;
-  }
-
-  .experience-title {
-    font-size: 1.8rem;
-    color: var(--tron-green);
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-  }
-
-  .company-badge {
-    display: inline-block;
-  }
-
-  .company-name {
-    font-family: 'Orbitron', sans-serif;
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-
-  .experience-date {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(0, 255, 65, 0.1);
-    border: 1px solid var(--tron-green);
-    border-radius: 20px;
-    font-family: 'Orbitron', sans-serif;
-    color: var(--tron-green);
-    font-size: 0.9rem;
-  }
-
-  .date-icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  .experience-description {
-    margin-bottom: 1.5rem;
-  }
-
-  .responsibility-item {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    align-items: flex-start;
-  }
-
-  .icon-wrapper {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--tron-green);
-    border-radius: 50%;
-    padding: 5px;
-  }
-
-  .icon-wrapper svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .responsibility-item p {
-    color: #d0d0d0;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .tech-stack {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--glass-border);
-    flex-wrap: wrap;
-  }
-
-  .tech-label {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--tron-green);
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  .tech-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .tech-tag {
-    padding: 0.4rem 1rem;
-    background: rgba(0, 255, 65, 0.1);
-    border: 1px solid var(--tron-green);
-    border-radius: 15px;
-    font-size: 0.85rem;
-    color: var(--tron-green);
-    font-family: 'Orbitron', sans-serif;
-  }
-
-  .achievements-section {
-    margin-top: 4rem;
-    padding-left: 80px;
-  }
-
-  .achievements-title {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.8rem;
-    color: var(--tron-green);
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-  }
-
-  .trophy-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .achievement-card {
-    text-align: center;
-    padding: 2rem;
-    transition: all 0.3s ease;
-  }
-
-  .achievement-card:hover {
-    transform: translateY(-10px) scale(1.05);
-  }
-
-  .achievement-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px var(--tron-green));
-  }
-
-  .achievement-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    color: var(--tron-green);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-
-  .achievement-subtitle {
-    color: #b0b0b0;
-    font-size: 0.95rem;
-  }
-
-  @media (max-width: 768px) {
-    .timeline-line {
-      left: 15px;
-    }
-
-    .timeline-dot {
-      left: 6px;
-    }
-
-    .experience-item,
-    .achievements-section {
-      padding-left: 50px;
-    }
-
-    .experience-header {
-      flex-direction: column;
-    }
-
-    .experience-title {
-      font-size: 1.5rem;
-    }
-
-    .achievements-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

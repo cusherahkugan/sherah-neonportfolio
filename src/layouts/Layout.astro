@@ -1,23 +1,73 @@
 ---
-// Layout.astro
-import "../styles/global.css";
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Cusherah Kugananthan - Full-Stack Developer Portfolio" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>{title}</title>
   </head>
   <body>
-    <div class="grid-background"></div>
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Grid Background -->
+    <div class="fixed inset-0 grid-bg opacity-20 pointer-events-none"></div>
+    
+    <!-- Gradient Orbs -->
+    <div class="fixed top-0 left-0 w-96 h-96 bg-neon-red/30 rounded-full filter blur-3xl opacity-20 animate-pulse-slow"></div>
+    <div class="fixed bottom-0 right-0 w-96 h-96 bg-neon-blue/30 rounded-full filter blur-3xl opacity-20 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    
+    <!-- Main Content -->
+    <main class="relative z-10">
+      <slot />
+    </main>
 
-    <div class="glow-line" style="top:20%"></div>
-    <div class="glow-line" style="top:50%"></div>
-    <div class="glow-line" style="top:80%"></div>
+    <script>
+      // Generate particles
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
 
-    <slot />
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 20}s`;
+        particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+        particlesContainer?.appendChild(particle);
+      }
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const href = anchor.getAttribute('href');
+    if (!href) return;
+
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+    </script>
   </body>
 </html>

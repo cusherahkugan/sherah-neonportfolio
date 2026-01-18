@@ -1,396 +1,168 @@
 ---
+import { Code, Palette, Brain, Users, Clock, Sparkles } from 'lucide-react';
+
+const softSkills = [
+  { icon: Users, name: 'Leadership', color: 'neon-red' },
+  { icon: Brain, name: 'Problem-Solving', color: 'neon-blue' },
+  { icon: Clock, name: 'Time Management', color: 'neon-pink' },
+  { icon: Users, name: 'Teamwork', color: 'neon-purple' },
+  { icon: Sparkles, name: 'Adaptability', color: 'neon-blue' },
+  { icon: Palette, name: 'Creativity', color: 'neon-red' },
+];
+
+const stats = [
+  { value: '3.6', label: 'GPA', suffix: '/4.0' },
+  { value: '15+', label: 'Projects', suffix: '' },
+  { value: '10+', label: 'Technologies', suffix: '' },
+  { value: '3+', label: 'Hackathons', suffix: '' },
+];
 ---
 
-<section id="about" class="about-section">
-  <div class="about-container">
-    <h2 class="section-title fade-in">ABOUT ME</h2>
+<section id="about" class="section-container">
+  <div class="max-w-6xl mx-auto">
     
-    <div class="about-content">
-      <div class="about-image-wrapper fade-in">
-        <div class="image-frame">
-          <div class="frame-corner tl"></div>
-          <div class="frame-corner tr"></div>
-          <div class="frame-corner bl"></div>
-          <div class="frame-corner br"></div>
-          <div class="profile-image-wrapper">
-            <img src="/cusherah3.jpeg" alt="Cusherah Kugananthan" class="profile-image" />
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-fade-in">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        About <span class="gradient-text">Me</span>
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-neon-red to-neon-blue mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      
+      <!-- Left: Bio & Education -->
+      <div class="space-y-6 animate-slide-up">
+        <div class="glass rounded-2xl p-8 hover-lift">
+          <div class="flex items-center gap-3 mb-6">
+            <Code className="w-8 h-8 text-neon-blue" />
+            <h3 class="text-2xl font-bold">Who I Am</h3>
+          </div>
+          
+          <p class="text-gray-300 leading-relaxed mb-4">
+            I'm a passionate Full-Stack Developer with strong Frontend expertise, currently pursuing my B.Sc. (Hons) 
+            in Information Systems at the University of Colombo School of Computing.
+          </p>
+          
+          <p class="text-gray-300 leading-relaxed mb-4">
+            With hands-on experience in building responsive and scalable web applications, I specialize in React, 
+            Angular, and modern CSS frameworks. I'm driven by the challenge of creating seamless user experiences 
+            that combine functionality with stunning visual design.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed">
+            Currently working as a Software Engineer Intern at Kingslake, where I develop enterprise-level 
+            applications and contribute to improving system architecture and user interfaces.
+          </p>
+        </div>
+
+        <!-- Education Card -->
+        <div class="glass rounded-2xl p-8 hover-lift border-l-4 border-neon-blue">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="gradient-text-alt">🎓 Education</span>
+          </h3>
+          <div class="space-y-3">
+            <div>
+              <p class="font-semibold text-lg">B.Sc. (Hons) in Information Systems</p>
+              <p class="text-gray-400">University of Colombo School of Computing</p>
+              <p class="text-sm text-neon-blue">2022 – Present</p>
+            </div>
+            <div class="flex items-center gap-2 pt-2">
+              <span class="px-3 py-1 bg-neon-red/20 border border-neon-red/30 rounded-full text-sm">
+                GPA: 3.6/4.0
+              </span>
+              <span class="px-3 py-1 bg-neon-blue/20 border border-neon-blue/30 rounded-full text-sm">
+                Dean's List
+              </span>
+            </div>
           </div>
         </div>
-        
-        <div class="stats-grid">
-          <div class="stat-card glass-card">
-            <div class="stat-number">3.6</div>
-            <div class="stat-label">GPA</div>
-          </div>
-          <div class="stat-card glass-card">
-            <div class="stat-number">10+</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div class="stat-card glass-card">
-            <div class="stat-number">2</div>
-            <div class="stat-label">Dean's List</div>
+
+        <!-- Research Card -->
+        <div class="glass rounded-2xl p-8 hover-lift border-l-4 border-neon-pink">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <Brain className="w-6 h-6 text-neon-pink" />
+            <span>Academic Research</span>
+          </h3>
+          <p class="font-semibold mb-2">Cognitive-Inspired Defense Framework for Federated Learning</p>
+          <p class="text-gray-400 text-sm mb-3">
+            Developing an adaptive defense architecture to mitigate model poisoning attacks in Federated Learning 
+            environments using cognitive reasoning loops.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs">Python</span>
+            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs">PyTorch</span>
+            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs">Flower</span>
           </div>
         </div>
       </div>
-      
-      <div class="about-text fade-in">
-        <div class="glass-card about-card">
-          <div class="card-header">
-            <span class="terminal-prompt">&gt;_</span>
-            <span class="terminal-title">about_cusherah.txt</span>
-          </div>
-          
-          <p class="about-paragraph">
-            I'm a passionate <span class="highlight">Full-Stack Developer</span> and 
-            <span class="highlight">Front-End Engineer</span> currently pursuing my 
-            <span class="highlight">B.Sc. (Hons) in Information Systems</span> at the 
-            University of Colombo School of Computing (UCSC).
-          </p>
-          
-          <p class="about-paragraph">
-            With a strong foundation in both frontend and backend technologies, I specialize in 
-            building <span class="highlight">scalable web applications</span> with clean, 
-            intuitive UI/UX. My expertise spans across modern frameworks like 
-            <span class="highlight">React.js</span>, <span class="highlight">Angular</span>, 
-            and <span class="highlight">Next.js</span>, combined with robust backend solutions 
-            using <span class="highlight">Node.js</span>, <span class="highlight">Spring Boot</span>, 
-            and various databases.
-          </p>
-          
-          <p class="about-paragraph">
-            Currently working as a <span class="highlight">Software Engineer Intern at Kingslake</span>, 
-            where I develop reusable Angular components and optimize data handling. I've achieved 
-            recognition in hackathons including <span class="highlight">Top 30 in FreshHack 3.0</span> 
-            and <span class="highlight">Top 10 in PyHack 2.0</span>.
-          </p>
-          
-          <p class="about-paragraph">
-            Beyond coding, I'm deeply interested in <span class="highlight">Machine Learning</span> 
-            and <span class="highlight">Federated Learning Security</span>, currently conducting 
-            undergraduate research on defending against model poisoning attacks.
-          </p>
-        </div>
+
+      <!-- Right: Stats & Soft Skills -->
+      <div class="space-y-6 animate-slide-up" style="animation-delay: 0.2s;">
         
-        <div class="soft-skills fade-in">
-          <h3 class="skills-title">
-            <span class="bracket">&lt;</span>
-            SOFT SKILLS
-            <span class="bracket">/&gt;</span>
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          {stats.map((stat, index) => (
+            <div 
+              class="glass rounded-xl p-6 text-center hover-lift group"
+              style={`animation-delay: ${index * 0.1}s;`}
+            >
+              <div class="text-3xl md:text-4xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform">
+                {stat.value}{stat.suffix}
+              </div>
+              <div class="text-gray-400 text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="glass rounded-2xl p-8 hover-lift">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <Sparkles className="w-6 h-6 text-neon-blue" />
+            <span>Soft Skills</span>
           </h3>
-          <div class="skills-tags">
-            <span class="skill-tag">Leadership</span>
-            <span class="skill-tag">Problem-Solving</span>
-            <span class="skill-tag">Time Management</span>
-            <span class="skill-tag">Teamwork</span>
-            <span class="skill-tag">Adaptability</span>
-            <span class="skill-tag">Creativity</span>
+          
+          <div class="grid grid-cols-2 gap-4">
+            {softSkills.map((skill) => {
+              const Icon = skill.icon;
+              return (
+                <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-all group cursor-pointer">
+                  <div class={`p-2 rounded-lg bg-${skill.color}/20 border border-${skill.color}/30 group-hover:scale-110 transition-transform`}>
+                    <Icon className={`w-5 h-5 text-${skill.color}`} />
+                  </div>
+                  <span class="text-sm font-medium">{skill.name}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
-        
-        <div class="certifications fade-in">
-          <h3 class="skills-title">
-            <span class="bracket">&lt;</span>
-            CERTIFICATIONS
-            <span class="bracket">/&gt;</span>
-          </h3>
-          <div class="cert-list">
-            <div class="cert-item glass-card">
-              <div class="cert-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
-              </div>
-              <div class="cert-details">
-                <div class="cert-name">Object Oriented Programming in Java</div>
-                <div class="cert-source">Coursera</div>
-              </div>
-            </div>
-            <div class="cert-item glass-card">
-              <div class="cert-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--tron-green)" stroke-width="2">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
-              </div>
-              <div class="cert-details">
-                <div class="cert-name">Java Programming & Software Engineering Fundamentals</div>
-                <div class="cert-source">Coursera</div>
-              </div>
-            </div>
+
+        <!-- Interests -->
+        <div class="glass rounded-2xl p-8 hover-lift">
+          <h3 class="text-xl font-bold mb-6">Areas of Interest</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="px-4 py-2 bg-gradient-to-r from-neon-red/20 to-neon-pink/20 border border-neon-red/30 rounded-full text-sm hover:scale-105 transition-transform cursor-pointer">
+              Frontend Development
+            </span>
+            <span class="px-4 py-2 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/30 rounded-full text-sm hover:scale-105 transition-transform cursor-pointer">
+              UI/UX Design
+            </span>
+            <span class="px-4 py-2 bg-gradient-to-r from-neon-pink/20 to-neon-purple/20 border border-neon-pink/30 rounded-full text-sm hover:scale-105 transition-transform cursor-pointer">
+              Machine Learning
+            </span>
+            <span class="px-4 py-2 bg-gradient-to-r from-neon-blue/20 to-neon-red/20 border border-neon-blue/30 rounded-full text-sm hover:scale-105 transition-transform cursor-pointer">
+              Federated Learning
+            </span>
+            <span class="px-4 py-2 bg-gradient-to-r from-neon-purple/20 to-neon-pink/20 border border-neon-purple/30 rounded-full text-sm hover:scale-105 transition-transform cursor-pointer">
+              Security
+            </span>
+            <span class="px-4 py-2 bg-gradient-to-r from-neon-red/20 to-neon-blue/20 border border-neon-red/30 rounded-full text-sm hover:scale-105 transition-transform cursor-pointer">
+              Project Management
+            </span>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .about-section {
-    background: linear-gradient(135deg, var(--tron-dark) 0%, var(--tron-black) 100%);
-  }
-
-  .about-container {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .about-image-wrapper {
-    position: sticky;
-    top: 100px;
-  }
-
-  .image-frame {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--tron-green);
-    background: rgba(0, 255, 65, 0.05);
-    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
-  }
-
-  .frame-corner {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 3px solid var(--tron-green);
-  }
-
-  .frame-corner.tl {
-    top: -2px;
-    left: -2px;
-    border-right: none;
-    border-bottom: none;
-  }
-
-  .frame-corner.tr {
-    top: -2px;
-    right: -2px;
-    border-left: none;
-    border-bottom: none;
-  }
-
-  .frame-corner.bl {
-    bottom: -2px;
-    left: -2px;
-    border-right: none;
-    border-top: none;
-  }
-
-  .frame-corner.br {
-    bottom: -2px;
-    right: -2px;
-    border-left: none;
-    border-top: none;
-  }
-
-  .profile-placeholder {
-    width: 80%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .profile-icon {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 20px var(--tron-green));
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .stat-card {
-    text-align: center;
-    padding: 1.5rem 1rem;
-  }
-
-  .stat-number {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--tron-green);
-    text-shadow: 0 0 20px var(--tron-green);
-  }
-
-  .stat-label {
-    font-size: 0.9rem;
-    color: #b0b0b0;
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .about-card {
-    margin-bottom: 2rem;
-  }
-
-  .card-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--glass-border);
-  }
-
-  .terminal-prompt {
-    color: var(--tron-green);
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-  }
-
-  .terminal-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    color: #b0b0b0;
-  }
-
-  .about-paragraph {
-    margin-bottom: 1.5rem;
-    color: #d0d0d0;
-    line-height: 1.8;
-    font-size: 1.05rem;
-  }
-
-  .about-paragraph:last-child {
-    margin-bottom: 0;
-  }
-
-  .highlight {
-    color: var(--tron-green);
-    font-weight: 600;
-    text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
-  }
-
-  .soft-skills,
-  .certifications {
-    margin-top: 2rem;
-  }
-
-  .skills-title {
-    font-size: 1.3rem;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-  }
-
-  .bracket {
-    color: var(--tron-green);
-  }
-
-  .skills-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
-
-  .cert-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .cert-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .cert-icon {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--tron-green);
-    border-radius: 50%;
-  }
-
-  .cert-details {
-    flex: 1;
-  }
-
-  .cert-name {
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 0.3rem;
-  }
-
-  .cert-source {
-    font-size: 0.9rem;
-    color: var(--tron-green);
-    font-family: 'Orbitron', sans-serif;
-  }
-
-  @media (max-width: 968px) {
-    .about-content {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-
-    .about-image-wrapper {
-      position: relative;
-      top: 0;
-    }
-
-    .stats-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .stat-number {
-      font-size: 1.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .stats-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .profile-image-wrapper {
-  width: 80%;
-  height: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.profile-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: drop-shadow(0 0 20px var(--tron-green));
-}
-
-</style>

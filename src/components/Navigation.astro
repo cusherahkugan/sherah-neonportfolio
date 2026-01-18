@@ -1,60 +1,100 @@
 ---
+const navItems = [
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Contact', href: '#contact' },
+];
 ---
 
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <span class="logo-bracket">&lt;</span>
-      <span class="logo-text">CK</span>
-      <span class="logo-bracket">/&gt;</span>
+<nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="text-2xl font-bold gradient-text hover:scale-105 transition-transform">
+        CK
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex items-center gap-8">
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.href}
+              class="text-gray-300 hover:text-white transition-colors relative group"
+            >
+              {item.name}
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-red to-neon-blue group-hover:w-full transition-all duration-300"></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-button"
+        class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
-    
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#hero" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-    
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+      <ul class="flex flex-col gap-4">
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.href}
+              class="block text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
 </nav>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  
-  hamburger?.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu?.classList.toggle('active');
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
   });
-  
-  // Close menu when clicking on a link
-  document.querySelectorAll('.nav-link').forEach(link => {
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
     link.addEventListener('click', () => {
-      hamburger?.classList.remove('active');
-      navMenu?.classList.remove('active');
+      mobileMenu?.classList.add('hidden');
     });
   });
 
-  // Navbar scroll effect
+  // Hide/show nav on scroll
   let lastScroll = 0;
-  const navbar = document.querySelector('.navbar');
-  
+  const nav = document.querySelector('nav');
+
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    if (currentScroll > 100) {
-      navbar?.classList.add('scrolled');
+    if (currentScroll <= 0) {
+      nav?.classList.remove('-translate-y-full');
+      return;
+    }
+    
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      nav?.classList.add('-translate-y-full');
     } else {
-      navbar?.classList.remove('scrolled');
+      nav?.classList.remove('-translate-y-full');
     }
     
     lastScroll = currentScroll;
@@ -62,165 +102,7 @@
 </script>
 
 <style>
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 1.5rem 5%;
-    transition: all 0.3s ease;
-    background: transparent;
-  }
-
-  .navbar.scrolled {
-    background: rgba(10, 14, 39, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
-    box-shadow: 0 5px 30px rgba(0, 255, 65, 0.1);
-    padding: 1rem 5%;
-  }
-
-  .nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--tron-green);
-    text-shadow: 0 0 20px var(--tron-green);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .logo-bracket {
-    color: #ffffff;
-    font-weight: 400;
-  }
-
-  .logo-text {
-    margin: 0 0.3rem;
-    animation: logo-pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes logo-pulse {
-    0%, 100% {
-      text-shadow: 0 0 20px var(--tron-green);
-    }
-    50% {
-      text-shadow: 0 0 40px var(--tron-green), 0 0 60px var(--tron-green);
-    }
-  }
-
-  .nav-logo:hover {
-    transform: scale(1.05);
-  }
-
-  .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-  }
-
-  .nav-link {
-    font-family: 'Orbitron', sans-serif;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-    padding: 0.5rem 0;
-    transition: all 0.3s ease;
-  }
-
-  .nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--tron-green);
-    box-shadow: 0 0 10px var(--tron-green);
-    transition: width 0.3s ease;
-  }
-
-  .nav-link:hover {
-    color: var(--tron-green);
-  }
-
-  .nav-link:hover::before {
-    width: 100%;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-  }
-
-  .hamburger span {
-    width: 30px;
-    height: 3px;
-    background: var(--tron-green);
-    border-radius: 3px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--tron-green);
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
-  }
-
-  @media (max-width: 768px) {
-    .hamburger {
-      display: flex;
-    }
-
-    .nav-menu {
-      position: fixed;
-      left: -100%;
-      top: 70px;
-      flex-direction: column;
-      background: rgba(10, 14, 39, 0.98);
-      backdrop-filter: blur(20px);
-      width: 100%;
-      text-align: center;
-      transition: left 0.3s ease;
-      border-bottom: 2px solid var(--tron-green);
-      box-shadow: 0 10px 50px rgba(0, 255, 65, 0.2);
-      padding: 2rem 0;
-      gap: 0;
-    }
-
-    .nav-menu.active {
-      left: 0;
-    }
-
-    .nav-menu li {
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(0, 255, 65, 0.1);
-    }
-
-    .nav-link {
-      font-size: 1.1rem;
-    }
+  nav {
+    transition: transform 0.3s ease-in-out;
   }
 </style>

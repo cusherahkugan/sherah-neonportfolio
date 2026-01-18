@@ -1,0 +1,139 @@
+---
+import { Heart, Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+
+const currentYear = new Date().getFullYear();
+
+const quickLinks = [
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+];
+
+const socialLinks = [
+  { icon: Github, href: 'https://github.com/cusherah-kugan', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/cusherah-kugan', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:cusherahkugan@gmail.com', label: 'Email' },
+];
+---
+
+<footer class="relative mt-20 border-t border-white/10">
+  <!-- Back to Top Button -->
+  <button 
+    id="back-to-top"
+    class="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-neon-red to-neon-pink rounded-full shadow-lg hover:scale-110 transition-all opacity-0 pointer-events-none z-50 group"
+    aria-label="Back to top"
+  >
+    <ArrowUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
+  </button>
+
+  <div class="section-container">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Footer Content -->
+      <div class="grid md:grid-cols-3 gap-12 pb-8">
+        
+        <!-- Brand -->
+        <div class="space-y-4">
+          <h3 class="text-2xl font-bold gradient-text">Cusherah Kugananthan</h3>
+          <p class="text-gray-400 text-sm">
+            Full-Stack Developer passionate about creating beautiful, functional, and user-friendly web experiences.
+          </p>
+          <div class="flex gap-4">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a 
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-3 glass glass-hover rounded-lg hover:text-neon-blue transition-all hover:scale-110"
+                  aria-label={social.label}
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            {quickLinks.map((link) => (
+              <li>
+                <a 
+                  href={link.href}
+                  class="text-gray-400 hover:text-white hover:translate-x-1 inline-block transition-all"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>
+              <a href="mailto:cusherahkugan@gmail.com" class="hover:text-white transition-colors">
+                cusherahkugan@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+94766741405" class="hover:text-white transition-colors">
+                +94 766741405
+              </a>
+            </li>
+            <li>Colombo, Sri Lanka</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 py-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-gray-400 flex items-center gap-2">
+            © {currentYear} Cusherah Kugananthan. Made with 
+            <Heart className="w-4 h-4 text-neon-red fill-current animate-pulse" />
+            using Astro
+          </p>
+          <p class="text-sm text-gray-400">
+            Designed & Built by 
+            <span class="text-neon-blue font-semibold"> Cusherah Kugananthan</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Decorative Gradient -->
+  <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-red via-neon-blue to-neon-pink"></div>
+</footer>
+
+<script>
+  // Back to top button functionality
+  const backToTopButton = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton?.classList.remove('opacity-0', 'pointer-events-none');
+      backToTopButton?.classList.add('opacity-100');
+    } else {
+      backToTopButton?.classList.add('opacity-0', 'pointer-events-none');
+      backToTopButton?.classList.remove('opacity-100');
+    }
+  });
+
+  backToTopButton?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
